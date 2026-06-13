@@ -264,23 +264,40 @@ http://www.tooplate.com/view/2098-health
   header {
     background: #ffffff;
     border-bottom: 1px solid #f2f2f2;
+    padding: 10px 0;
+    height: auto;
+  }
+
+  header .container {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    padding: 8px 0;
-    min-height: 45px;
-    height: auto;
+    gap: 18px;
+  }
+
+  header .row {
+    order: 1;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  header .col-md-4,
+  header .col-md-8 {
+    float: none;
   }
 
   header .col-md-8 {
     padding-right: 0;
   }
 
-  header p,
-  header span {
-    font-size: 12px;
-    line-height: 24px;
-    padding-top: 12px;
+  header p {
+    color: #555555;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
   }
 
   header a,
@@ -291,19 +308,53 @@ http://www.tooplate.com/view/2098-health
   header span {
     font-weight: 500;
     display: inline-block;
-    padding: 11px 15px;
+    padding: 0 14px;
+    font-size: 12px;
+    line-height: 1.5;
   }
 
   header span.date-icon {
     border-left: 1px solid #f2f2f2;
     border-right: 1px solid #f2f2f2;
-    padding-right: 19px;
-    padding-left: 19px;
   }
 
   header span i {
     color: #a5c422;
     margin-right: 5px;
+  }
+
+  header .phone-icon {
+    padding-left: 0;
+  }
+
+  header .phone-icon a {
+    background: #25D366;
+    border-radius: 50px;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 13px;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.2);
+  }
+
+  header .phone-icon a:hover,
+  header .phone-icon a:focus {
+    background: #1fb857;
+    color: #ffffff;
+  }
+
+  header .phone-icon i {
+    color: #ffffff;
+    font-size: 18px;
+    margin-right: 0;
+  }
+
+  header .language-selector {
+    order: 2;
+    flex-shrink: 0;
+    margin-left: auto;
   }
 
 
@@ -967,13 +1018,18 @@ http://www.tooplate.com/view/2098-health
     header {
       height: inherit;
     }
-    header span.date-icon {
-      border: 0;
-      padding-right: 0;
-      padding-left: 0;
+    header .row {
+      flex-wrap: wrap;
+      row-gap: 8px;
     }
-    header span.email-icon {
-      padding-top: 0;
+    header .col-md-4 {
+      width: 35%;
+    }
+    header .col-md-8 {
+      width: 65%;
+    }
+    header span.date-icon {
+      border-right: 0;
     }
 
     .navbar-default .navbar-nav li a {
@@ -988,16 +1044,33 @@ http://www.tooplate.com/view/2098-health
     }
 
     header {
-      /* keep header compact on tablet */
-      padding-bottom: 6px;
+      padding: 12px 0;
+    }
+    header .container {
+      gap: 10px;
+    }
+    header .row {
+      flex: 1 1 100%;
     }
     header .text-align-right {
       text-align: left;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      margin-top: 10px;
     }
     header span {
-      padding-top: 0;
-      padding-left: 0;
-      padding-bottom: 0;
+      padding: 0;
+    }
+    header span.date-icon {
+      border: 0;
+    }
+    header .phone-icon a {
+      padding: 8px 12px;
+    }
+    header .language-selector {
+      margin-left: 0;
     }
   }
 
@@ -1055,12 +1128,18 @@ http://www.tooplate.com/view/2098-health
       bottom: 10em;
     }
 
-    /* Make header stack vertically on small screens */
     header {
+      padding: 12px 0;
+    }
+
+    header .container {
       flex-direction: column;
       align-items: flex-start;
-      padding-left: 12px;
-      padding-right: 12px;
+      gap: 0;
+    }
+
+    header .row {
+      width: 100%;
     }
 
     header .col-md-4,
@@ -1072,12 +1151,13 @@ http://www.tooplate.com/view/2098-health
 
     header .text-align-right {
       text-align: left;
-      margin-top: 6px;
+      margin-top: 10px;
+      gap: 10px;
     }
 
     .language-selector {
-      align-self: flex-end;
-      margin-bottom: 6px;
+      justify-content: flex-start;
+      margin-top: 12px;
     }
   }
 
@@ -1103,12 +1183,8 @@ http://www.tooplate.com/view/2098-health
     }
 
     .language-selector {
-      position: static;
       width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 10px;
-      padding: 0 15px;
+      justify-content: flex-start;
     }
 
     .section-btn {
@@ -1151,10 +1227,17 @@ http://www.tooplate.com/view/2098-health
       padding-top: 40px;
     }
 
-    header span,
     header p {
       font-size: 11px;
-      padding-top: 8px;
+    }
+
+    header span {
+      font-size: 11px;
+    }
+
+    header .phone-icon a {
+      font-size: 12px;
+      padding: 8px 11px;
     }
 
     .caption .col-md-offset-1,

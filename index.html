@@ -27,30 +27,31 @@ http://www.tooplate.com/view/2098-health
 
      <style>
           .language-selector {
-               position: absolute;
-               right: 20px;
-               top: 15px;
-               z-index: 1000;
+               display: inline-flex;
+               align-items: center;
+               gap: 6px;
           }
           .language-selector button {
-               background: linear-gradient(to right, #00C853, #1565C0);
-               color: white;
-               border: none;
-               padding: 5px 10px;
-               margin: 0 3px;
+               background: #f5f7fa;
+               color: #4267b2;
+               border: 1px solid #e5e9f0;
+               padding: 6px 10px;
                border-radius: 3px;
                cursor: pointer;
-               font-weight: bold;
-               font-size: 12px;
+               font-weight: 600;
+               font-size: 11px;
+               line-height: 1;
                transition: all 0.3s ease;
           }
           .language-selector button.active {
-               background: linear-gradient(to right, #00BCD4, #0D47A1);
-               box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+               background: #4267b2;
+               border-color: #4267b2;
+               color: #ffffff;
+               box-shadow: 0 4px 12px rgba(66,103,178,0.18);
           }
           .language-selector button:hover {
                transform: translateY(-2px);
-               box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+               box-shadow: 0 4px 12px rgba(0,0,0,0.1);
           }
 
           .whatsapp-float {
@@ -126,7 +127,7 @@ http://www.tooplate.com/view/2098-health
                     </div>
                          
                     <div class="col-md-8 col-sm-7 text-align-right">
-                         <span class="phone-icon"><a href="https://wa.me/380756612610" target="_blank" rel="noopener noreferrer" title="+380 756612610"><i class="fa fa-whatsapp"></i></a></span>
+                         <span class="phone-icon"><a href="https://wa.me/380756612610" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp"><i class="fa fa-whatsapp"></i> +380 75 661 2610</a></span>
                          <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 6:00 AM - 10:00 PM (Mon-Fri)</span>
                          <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">info@odessa-health.ua</a></span>
                     </div>
