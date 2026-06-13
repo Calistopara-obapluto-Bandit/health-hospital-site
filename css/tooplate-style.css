@@ -329,12 +329,13 @@ http://www.tooplate.com/view/2098-health
 
   header .phone-icon a {
     background: #25D366;
-    border-radius: 50px;
+    border-radius: 100%;
     color: #ffffff;
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    padding: 8px 13px;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
     font-weight: 600;
     box-shadow: 0 6px 18px rgba(37, 211, 102, 0.2);
   }
@@ -347,7 +348,7 @@ http://www.tooplate.com/view/2098-health
 
   header .phone-icon i {
     color: #ffffff;
-    font-size: 18px;
+    font-size: 24px;
     margin-right: 0;
   }
 
@@ -1067,7 +1068,8 @@ http://www.tooplate.com/view/2098-health
       border: 0;
     }
     header .phone-icon a {
-      padding: 8px 12px;
+      width: 40px;
+      height: 40px;
     }
     header .language-selector {
       margin-left: 0;
@@ -1236,8 +1238,12 @@ http://www.tooplate.com/view/2098-health
     }
 
     header .phone-icon a {
-      font-size: 12px;
-      padding: 8px 11px;
+      width: 38px;
+      height: 38px;
+    }
+
+    header .phone-icon i {
+      font-size: 22px;
     }
 
     .caption .col-md-offset-1,
