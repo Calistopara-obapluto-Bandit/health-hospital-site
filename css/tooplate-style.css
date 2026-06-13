@@ -1113,3 +1113,61 @@ http://www.tooplate.com/view/2098-health
     }
   }
 
+  /* Extra small devices (phones, up to 480px) - tighter layout */
+  @media only screen and (max-width: 480px) {
+    .slider .item {
+      min-height: 360px;
+      height: auto;
+      padding-bottom: 30px;
+    }
+
+    .slider .caption {
+      padding: 30px 12px 40px;
+    }
+
+    .news-info {
+      padding: 18px;
+    }
+
+    .team-info {
+      padding: 12px 15px 0 15px;
+    }
+
+    .team-thumb .social-icon {
+      top: -8em;
+    }
+
+    .angle-up-btn {
+      bottom: 6em;
+    }
+
+    .contact-info .fa {
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      font-size: 13px;
+    }
+
+    footer {
+      padding-top: 40px;
+    }
+
+    header span,
+    header p {
+      font-size: 11px;
+      padding-top: 8px;
+    }
+
+    .slider .owl-dots {
+      bottom: 0;
+      top: auto;
+      margin-top: 8px;
+    }
+
+    .caption .col-md-offset-1,
+    .caption .col-md-10 {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+  }
+
