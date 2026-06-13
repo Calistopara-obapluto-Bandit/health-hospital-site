@@ -1,16 +1,10 @@
 services:
   - type: web
     name: health-hospital-site
+    runtime: static
     buildCommand: ""
-    startCommand: "npx http-server . -p 3000"
-    envVars:
-      - key: NODE_ENV
-        value: production
-    staticSite:
-      name: health-hospital-site
-      buildCommand: ""
-      publishPath: ./
+    staticPublishPath: ./
     routes:
-      - path: /
-        matchType: prefix
-        destination: ./index.html
+      - type: rewrite
+        source: /*
+        destination: /index.html
