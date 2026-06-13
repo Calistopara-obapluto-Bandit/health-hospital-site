@@ -2,10 +2,14 @@
 
   "use strict";
 
-    // PRE LOADER
-    $(window).load(function(){
-      $('.preloader').fadeOut(1000); // set duration in brackets    
+    // PRE LOADER - use modern event and add fallback timeout
+    $(window).on('load', function(){
+      $('.preloader').fadeOut(800);
     });
+    // Fallback: hide preloader after 4s in case load event doesn't fire
+    setTimeout(function(){
+      $('.preloader').fadeOut(800);
+    }, 4000);
 
 
     //Navigation Section
