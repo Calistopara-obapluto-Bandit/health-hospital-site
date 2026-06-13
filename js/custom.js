@@ -18,15 +18,6 @@
     });
 
 
-    // Owl Carousel
-    $('.owl-carousel').owlCarousel({
-      animateOut: 'fadeOut',
-      items:1,
-      loop:true,
-      autoplay:true,
-    })
-
-
     // PARALLAX EFFECT
     $.stellar();  
 

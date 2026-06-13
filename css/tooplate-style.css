@@ -225,12 +225,6 @@ http://www.tooplate.com/view/2098-health
   /* Safety: hide preloader by default to avoid persistent blank overlays */
   .preloader { display: none !important; }
 
-  /* Ensure the slider is visible if Owl Carousel initialization is delayed */
-  .owl-carousel.owl-loading,
-  .owl-carousel.owl-hidden {
-    opacity: 1 !important;
-  }
-
   .spinner {
     border: 1px solid transparent;
     border-radius: 3px;
@@ -417,101 +411,63 @@ http://www.tooplate.com/view/2098-health
     margin: 0;
   }
 
-  .slider .container {
-    width: 100%;
-  }
-
-  /* Fallback background for slider in case carousel or images fail to load */
-  .slider {
-    background-image: url('../images/slider1.jpg');
-    background-size: cover;
-    background-position: center;
-    min-height: 360px;
-  }
-
-  .owl-stage-outer, .owl-stage {
-    height: auto !important;
-    display: block !important;
-  }
-
-  .owl-carousel {
-    display: block !important;
-    position: relative;
-  }
-
-  .owl-item {
-    display: block !important;
-    min-height: 450px !important;
-  }
-
-  .slider {
-    min-height: 450px;
-    background-color: #f0f2f5;
-    background-image: url('../images/slider1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .slider .owl-dots {
-      position: absolute;
-      bottom: 35px;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin: 0;
-      padding: 0;
-  }
-
-  .owl-theme .owl-dots .owl-dot span {
-    width: 8px;
-    height: 8px;
-    margin: 5px 7px;
-    border: 2px solid rgba(255,255,255,0.7);
-    background: transparent;
-    display: block;
-    -webkit-backface-visibility: visible;
-    transition: opacity 200ms ease;
-    border-radius: 30px;
-  }
-
-  .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-    background-color: #ffffff;
-    border-color: transparent;
-  }
-
-  .slider .caption {
+  .hero {
+    min-height: 540px;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    background-color: rgba(20,20,20,0.2);
-    height: 100%;
-    color: #fff;
-    cursor: e-resize;
-  }
-
-  .slider .item {
-    background-position: inherit;
-    background-repeat: no-repeat;
-    background-attachment: local;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(0,115,183,0.9) 0%, rgba(0,76,141,0.95) 100%), url('../images/slider1.jpg');
     background-size: cover;
-    min-height: 450px;
-    height: auto;
+    background-position: center;
     padding: 80px 0;
+    color: #ffffff;
   }
 
-  .slider .item-first {
-    background-image: url(../images/slider1.jpg);
+  .hero-content {
+    max-width: 600px;
   }
 
-  .slider .item-second {
-    background-image: url(../images/slider2.jpg);
+  .hero-label {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: #a5c422;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 13px;
   }
 
-  .slider .item-third {
-    background-image: url(../images/slider3.jpg);
+  .hero h1 {
+    font-size: 3.2em;
+    line-height: 1.05;
+    margin: 0 0 18px;
+    letter-spacing: -1px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    max-width: 460px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.92);
+    margin-bottom: 25px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero .section-btn {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #ffffff;
+    padding: 14px 24px;
+    min-width: 170px;
+  }
+
+  .hero .section-btn:hover {
+    background: rgba(255,255,255,0.25);
+    color: #ffffff;
   }
 
 
@@ -1027,8 +983,8 @@ http://www.tooplate.com/view/2098-health
   }
 
   @media only screen and (max-width: 992px) {
-    .slider .item {
-      background-position: center;
+    .hero {
+      padding: 60px 0;
     }
 
     header {
@@ -1046,6 +1002,18 @@ http://www.tooplate.com/view/2098-health
   }
 
   @media only screen and (max-width: 767px) {
+    .hero {
+      padding: 50px 0;
+    }
+
+    .hero h1 {
+      font-size: 2.4em;
+    }
+
+    .hero p {
+      font-size: 16px;
+      max-width: 100%;
+    }
     .navbar-default .navbar-collapse, .navbar-default .navbar-form {
       border-color: transparent;
     }
@@ -1130,42 +1098,6 @@ http://www.tooplate.com/view/2098-health
       letter-spacing: 1px;
     }
 
-    .slider .owl-dots {
-      position: relative;
-      top: auto;
-      margin-top: 20px;
-    }
-
-    .slider .owl-stage-outer,
-    .owl-stage,
-    .owl-item,
-    .slider .item {
-      width: 100% !important;
-      max-width: 100% !important;
-      min-width: 100% !important;
-    }
-
-    .slider .owl-stage-outer {
-      overflow: hidden;
-    }
-
-    .slider .caption {
-      padding: 50px 15px 60px;
-      box-sizing: border-box;
-    }
-
-    .caption .col-md-offset-1,
-    .caption .col-md-10 {
-      width: 100% !important;
-      margin: 0 !important;
-      padding: 0 !important;
-    }
-
-    .slider .item {
-      min-height: 480px;
-      background-position: center;
-    }
-
     .navbar-default .navbar-nav li a {
       white-space: normal;
     }
@@ -1192,16 +1124,6 @@ http://www.tooplate.com/view/2098-health
 
   /* Extra small devices (phones, up to 480px) - tighter layout */
   @media only screen and (max-width: 480px) {
-    .slider .item {
-      min-height: 360px;
-      height: auto;
-      padding-bottom: 30px;
-    }
-
-    .slider .caption {
-      padding: 30px 12px 40px;
-    }
-
     .news-info {
       padding: 18px;
     }
@@ -1233,12 +1155,6 @@ http://www.tooplate.com/view/2098-health
     header p {
       font-size: 11px;
       padding-top: 8px;
-    }
-
-    .slider .owl-dots {
-      bottom: 0;
-      top: auto;
-      margin-top: 8px;
     }
 
     .caption .col-md-offset-1,
