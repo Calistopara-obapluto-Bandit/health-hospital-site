@@ -222,6 +222,9 @@ http://www.tooplate.com/view/2098-health
     background: none repeat scroll 0 0 #ffffff;
   }
 
+  /* Safety: hide preloader by default to avoid persistent blank overlays */
+  .preloader { display: none !important; }
+
   .spinner {
     border: 1px solid transparent;
     border-radius: 3px;
@@ -410,6 +413,23 @@ http://www.tooplate.com/view/2098-health
 
   .slider .container {
     width: 100%;
+  }
+
+  /* Fallback background for slider in case carousel or images fail to load */
+  .slider {
+    background-image: url('../images/slider1.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 360px;
+  }
+
+  .owl-stage-outer, .owl-stage {
+    height: auto !important;
+    display: block !important;
+  }
+
+  .owl-item {
+    display: block !important;
   }
 
   .slider .owl-dots {
