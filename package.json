@@ -1,0 +1,18 @@
+{
+  "name": "health-hospital-site",
+  "version": "1.0.0",
+  "description": "Odessa Medical Hospital - Health Template 2098",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000",
+    "dev": "npx http-server . -p 8080"
+  },
+  "keywords": [
+    "hospital",
+    "health",
+    "medical",
+    "responsive"
+  ],
+  "author": "SBIAM",
+  "license": "MIT"
+}
