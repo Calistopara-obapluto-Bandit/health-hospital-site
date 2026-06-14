@@ -78,9 +78,36 @@ http://www.tooplate.com/view/2098-health
                transform: translateY(-2px);
           }
 
-          .whatsapp-float i {
+          .whatsapp-float i,
+          .email-float i {
                font-size: 30px;
                line-height: 1;
+          }
+
+          .email-float {
+               position: fixed;
+               right: 24px;
+               bottom: 100px;
+               z-index: 10000;
+               display: inline-flex;
+               align-items: center;
+               gap: 10px;
+               background: #4267B2;
+               color: #ffffff;
+               border-radius: 50px;
+               padding: 14px 20px;
+               box-shadow: 0 10px 28px rgba(66, 103, 178, 0.36);
+               font-size: 15px;
+               font-weight: 600;
+               text-decoration: none;
+          }
+
+          .email-float:hover,
+          .email-float:focus {
+               color: #ffffff;
+               background: #365899;
+               transform: translateY(-2px);
+               text-decoration: none;
           }
 
           @media only screen and (max-width: 639px) {
@@ -94,6 +121,19 @@ http://www.tooplate.com/view/2098-health
                }
 
                .whatsapp-float span {
+                    display: none;
+               }
+
+               .email-float {
+                    right: 16px;
+                    bottom: 88px;
+                    width: 60px;
+                    height: 60px;
+                    justify-content: center;
+                    padding: 0;
+               }
+
+               .email-float span {
                     display: none;
                }
           }
@@ -592,6 +632,11 @@ http://www.tooplate.com/view/2098-health
                </div>
           </div>
      </footer>
+
+     <a class="email-float" href="mailto:odessamedicalhospital@gmail.com" title="Email us">
+          <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          <span>Email</span>
+     </a>
 
      <a class="whatsapp-float" href="https://wa.me/380756612610" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
           <i class="fa fa-whatsapp" aria-hidden="true"></i>
