@@ -447,7 +447,7 @@ http://www.tooplate.com/view/2098-health
 
                     <div class="col-md-6 col-sm-6">
                          <!-- CONTACT FORM HERE -->
-                         <form id="appointment-form" role="form" method="post" action="#">
+                         <form id="appointment-form" role="form" method="post" action="https://formspree.io/f/xjkyekdk">
 
                               <!-- SECTION TITLE -->
                               <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
@@ -483,8 +483,9 @@ http://www.tooplate.com/view/2098-health
                                    <div class="col-md-12 col-sm-12">
                                         <label for="telephone" class="translate" data-en="Phone Number" data-el="Τηλεφωνικό Νούμερο" data-uk="Номер телефону">Phone Number</label>
                                         <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone">
-                                        <label for="Message" class="translate" data-en="Medical History" data-el="Ιστορικό Υγείας" data-uk="Анамнез">Medical History</label>
-                                        <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message"></textarea>
+                                        <label for="medical-history" class="translate" data-en="Medical History" data-el="Ιστορικό Υγείας" data-uk="Анамнез">Medical History</label>
+                                        <textarea class="form-control" rows="5" id="medical-history" name="medical_history" placeholder="Message" required></textarea>
+                                        <div id="form-status" style="display:none;margin-bottom:12px;padding:10px 14px;border-radius:4px;text-align:center;font-weight:600;"></div>
                                         <button type="submit" class="form-control translate" id="cf-submit" name="submit" data-en="Submit Admission Form" data-el="Υποβολή Φόρμας" data-uk="Надіслати форму">Submit Admission Form</button>
                                    </div>
                               </div>
@@ -607,6 +608,44 @@ http://www.tooplate.com/view/2098-health
      <script src="js/custom.js"></script>
 
      <script>
+          // Admission Form Handler
+          document.getElementById('appointment-form').addEventListener('submit', async function(e) {
+               e.preventDefault();
+               const btn = document.getElementById('cf-submit');
+               const status = document.getElementById('form-status');
+               const original = btn.textContent;
+               const name = document.getElementById('name').value.trim();
+               const email = document.getElementById('email').value.trim();
+               const phone = document.getElementById('phone').value.trim();
+               const msg = document.getElementById('medical-history').value.trim();
+               const date = document.querySelector('input[name="date"]').value;
+               if (!name || !email || !phone || !msg || !date) {
+                    status.style.display = 'block';
+                    status.style.background = '#f8d7da'; status.style.color = '#721c24';
+                    status.textContent = 'Please fill in all required fields.';
+                    return;
+               }
+               btn.disabled = true;
+               btn.textContent = 'Submitting...';
+               status.style.display = 'none';
+               try {
+                    const r = await fetch(this.action, { method:'POST', body: new FormData(this), headers:{'Accept':'application/json'} });
+                    if (r.ok) {
+                         status.style.display = 'block';
+                         status.style.background = '#d4edda'; status.style.color = '#155724';
+                         status.textContent = 'Admission request submitted successfully! We will contact you shortly.';
+                         this.reset();
+                    } else throw Error();
+               } catch(e) {
+                    status.style.display = 'block';
+                    status.style.background = '#f8d7da'; status.style.color = '#721c24';
+                    status.textContent = 'Something went wrong. Please email odessamedicalhospital@gmail.com directly.';
+               } finally {
+                    btn.disabled = false;
+                    btn.textContent = original;
+               }
+          });
+
           // Language Switching System
           (function() {
                // Get saved language or default to English
